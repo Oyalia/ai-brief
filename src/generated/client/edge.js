@@ -39,12 +39,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 7.7.0
- * Query Engine version: 75cbdc1eb7150937890ad5465d861175c6624711
+ * Prisma Client JS version: 7.8.0
+ * Query Engine version: 3c6e192761c0362d496ed980de936e2f3cebcd3a
  */
 Prisma.prismaVersion = {
-  client: "7.7.0",
-  engine: "75cbdc1eb7150937890ad5465d861175c6624711"
+  client: "7.8.0",
+  engine: "3c6e192761c0362d496ed980de936e2f3cebcd3a"
 }
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -86,6 +86,9 @@ Prisma.NullTypes = NullTypes
  * Enums
  */
 exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
+  ReadUncommitted: 'ReadUncommitted',
+  ReadCommitted: 'ReadCommitted',
+  RepeatableRead: 'RepeatableRead',
   Serializable: 'Serializable'
 });
 
@@ -119,6 +122,11 @@ exports.Prisma.SortOrder = {
   desc: 'desc'
 };
 
+exports.Prisma.QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
+};
+
 exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
@@ -133,10 +141,10 @@ exports.Prisma.ModelName = {
  */
 const config = {
   "previewFeatures": [],
-  "clientVersion": "7.7.0",
-  "engineVersion": "75cbdc1eb7150937890ad5465d861175c6624711",
-  "activeProvider": "sqlite",
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Get a free hosted Postgres database in seconds: `npx create-db`\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/client\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n}\n\nmodel Brief {\n  id          String  @id @default(cuid())\n  // Block 1: General\n  contactName String\n  email       String\n  phone       String?\n  companyName String?\n\n  // Block 2: Essence\n  primaryObjective String\n  problemToSolve   String?\n  keyFeatures      String? // JSON string of features\n\n  // Block 3: AI & Tech\n  aiCapabilities  String\n  preferredModels String?\n  dataSources     String?\n  integrations    String?\n\n  // Block 4: Design\n  designStyle  String?\n  colorPalette String?\n  competitors  String?\n\n  // Block 5: Business\n  targetAudience String\n  budgetRange    String\n  timeline       String\n  successMetrics String?\n  comments       String?\n\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n"
+  "clientVersion": "7.8.0",
+  "engineVersion": "3c6e192761c0362d496ed980de936e2f3cebcd3a",
+  "activeProvider": "postgresql",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Get a free hosted Postgres database in seconds: `npx create-db`\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/client\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nmodel Brief {\n  id          String  @id @default(cuid())\n  // Block 1: General\n  contactName String\n  email       String\n  phone       String?\n  companyName String?\n\n  // Block 2: Essence\n  primaryObjective String\n  problemToSolve   String?\n  keyFeatures      String? // JSON string of features\n\n  // Block 3: AI & Tech\n  aiCapabilities  String\n  preferredModels String?\n  dataSources     String?\n  integrations    String?\n\n  // Block 4: Design\n  designStyle  String?\n  colorPalette String?\n  competitors  String?\n\n  // Block 5: Business\n  targetAudience String\n  budgetRange    String\n  timeline       String\n  successMetrics String?\n  comments       String?\n\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n}\n"
 }
 
 config.runtimeDataModel = JSON.parse("{\"models\":{\"Brief\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"contactName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"phone\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companyName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"primaryObjective\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"problemToSolve\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"keyFeatures\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"aiCapabilities\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"preferredModels\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"dataSources\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"integrations\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"designStyle\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"colorPalette\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"competitors\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"targetAudience\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"budgetRange\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"timeline\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"successMetrics\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"comments\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
