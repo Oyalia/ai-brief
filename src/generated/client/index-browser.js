@@ -24,12 +24,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 7.8.0
- * Query Engine version: 3c6e192761c0362d496ed980de936e2f3cebcd3a
+ * Prisma Client JS version: 7.7.0
+ * Query Engine version: 75cbdc1eb7150937890ad5465d861175c6624711
  */
 Prisma.prismaVersion = {
-  client: "7.8.0",
-  engine: "3c6e192761c0362d496ed980de936e2f3cebcd3a"
+  client: "7.7.0",
+  engine: "75cbdc1eb7150937890ad5465d861175c6624711"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -126,20 +126,28 @@ exports.Prisma.BriefScalarFieldEnum = {
   email: 'email',
   phone: 'phone',
   companyName: 'companyName',
+  projectName: 'projectName',
   primaryObjective: 'primaryObjective',
+  projectStage: 'projectStage',
   problemToSolve: 'problemToSolve',
   keyFeatures: 'keyFeatures',
   aiCapabilities: 'aiCapabilities',
   preferredModels: 'preferredModels',
   dataSources: 'dataSources',
   integrations: 'integrations',
+  techStack: 'techStack',
   designStyle: 'designStyle',
   colorPalette: 'colorPalette',
   competitors: 'competitors',
   targetAudience: 'targetAudience',
+  targetLanguages: 'targetLanguages',
+  userCount: 'userCount',
   budgetRange: 'budgetRange',
   timeline: 'timeline',
   successMetrics: 'successMetrics',
+  monetizationModel: 'monetizationModel',
+  securityCompliance: 'securityCompliance',
+  maintenanceRequirements: 'maintenanceRequirements',
   comments: 'comments',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'

@@ -9,8 +9,10 @@ export default function Home() {
     email: "",
     phone: "",
     companyName: "",
+    projectName: "",
     // Block 2
     primaryObjective: "Створення B2B продукту",
+    projectStage: "Ідея",
     problemToSolve: "",
     keyFeatures: "",
     // Block 3
@@ -18,15 +20,21 @@ export default function Home() {
     preferredModels: "OpenAI / GPT-4",
     dataSources: "",
     integrations: "",
+    techStack: "",
     // Block 4
     designStyle: "Minimalist",
     colorPalette: "",
     competitors: "",
     // Block 5
     targetAudience: "",
+    targetLanguages: "Українська",
+    userCount: "0 - 100",
     budgetRange: "$10k - $50k",
     timeline: "3-6 місяців",
     successMetrics: "",
+    monetizationModel: "",
+    securityCompliance: "",
+    maintenanceRequirements: "",
     comments: "",
   });
 
@@ -60,6 +68,9 @@ export default function Home() {
   ];
 
   const models = ["OpenAI / GPT-4", "Anthropic / Claude", "Llama / Open Source", "Custom Training"];
+  const stages = ["Ідея", "MVP", "Існуючий продукт", "Масштабування"];
+  const languages = ["Українська", "English", "Multilingual (UA/EN)", "Інше"];
+  const userCounts = ["0 - 100", "100 - 1,000", "1,000 - 10,000", "10,000+"];
   const styles = ["Minimalist", "Corporate", "Futurist / Tech", "Brutalist"];
   const budgets = ["< $10k", "$10k - $50k", "$50k - $100k", "> $100k"];
   const timelines = ["1-3 місяці", "3-6 місяців", "6-12 місяців", "Гнучко"];
@@ -136,6 +147,16 @@ export default function Home() {
                     onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                   />
                 </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Назва проекту</label>
+                  <input
+                    required
+                    type="text"
+                    placeholder="My AI Tool"
+                    value={formData.projectName}
+                    onChange={(e) => setFormData({ ...formData, projectName: e.target.value })}
+                  />
+                </div>
               </div>
             </section>
 
@@ -157,6 +178,19 @@ export default function Home() {
                     {objectives.map((obj) => (
                       <option key={obj} value={obj}>
                         {obj}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Стадія проекту</label>
+                  <select
+                    value={formData.projectStage}
+                    onChange={(e) => setFormData({ ...formData, projectStage: e.target.value })}
+                  >
+                    {stages.map((s) => (
+                      <option key={s} value={s}>
+                        {s}
                       </option>
                     ))}
                   </select>
@@ -231,6 +265,24 @@ export default function Home() {
                     placeholder="Slack, Salesforce, HubSpot..."
                     value={formData.integrations}
                     onChange={(e) => setFormData({ ...formData, integrations: e.target.value })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Бажаний стек технологій</label>
+                  <input
+                    type="text"
+                    placeholder="Next.js, Python, PostgreSQL..."
+                    value={formData.techStack}
+                    onChange={(e) => setFormData({ ...formData, techStack: e.target.value })}
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Вимоги до безпеки та комплаєнсу</label>
+                  <input
+                    type="text"
+                    placeholder="GDPR, HIPAA, SOC2, шифрування..."
+                    value={formData.securityCompliance}
+                    onChange={(e) => setFormData({ ...formData, securityCompliance: e.target.value })}
                   />
                 </div>
               </div>
@@ -332,6 +384,50 @@ export default function Home() {
                     ))}
                   </select>
                 </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Мови продукту</label>
+                  <select
+                    value={formData.targetLanguages}
+                    onChange={(e) => setFormData({ ...formData, targetLanguages: e.target.value })}
+                  >
+                    {languages.map((l) => (
+                      <option key={l} value={l}>
+                        {l}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Кількість користувачів</label>
+                  <select
+                    value={formData.userCount}
+                    onChange={(e) => setFormData({ ...formData, userCount: e.target.value })}
+                  >
+                    {userCounts.map((u) => (
+                      <option key={u} value={u}>
+                        {u}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Модель монетизації</label>
+                  <input
+                    type="text"
+                    placeholder="SaaS подписка, Freemium, Транзакційна..."
+                    value={formData.monetizationModel}
+                    onChange={(e) => setFormData({ ...formData, monetizationModel: e.target.value })}
+                  />
+                </div>
+                <div className="space-y-2 md:col-span-2">
+                  <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Підтримка та обслуговування</label>
+                  <input
+                    type="text"
+                    placeholder="Чи потрібна техпідтримка 24/7, оновлення ШІ моделей?.."
+                    value={formData.maintenanceRequirements}
+                    onChange={(e) => setFormData({ ...formData, maintenanceRequirements: e.target.value })}
+                  />
+                </div>
               </div>
               <div className="space-y-2">
                 <label className="text-xs font-bold text-gray-500 uppercase tracking-widest">Додаткові побажання</label>
@@ -347,9 +443,9 @@ export default function Home() {
             <button
               disabled={isSubmitting}
               type="submit"
-              className="w-full bg-white text-black py-5 rounded-2xl font-black text-xl hover:bg-gray-100 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 transition-all shadow-2xl shadow-white/5"
+              className="shimmer w-full bg-white text-black py-6 rounded-2xl font-black text-2xl hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 transition-all shadow-[0_0_40px_rgba(255,255,255,0.1)]"
             >
-              {isSubmitting ? "Аналізуємо ваші дані..." : "НАДІСЛАТИ ДЕТАЛЬНИЙ БРИФ"}
+              {isSubmitting ? "Аналізуємо ваші дані..." : "ГЕНЕРУВАТИ ПЛАН ПРОЕКТУ"}
             </button>
           </form>
         )}

@@ -19,9 +19,11 @@ model Brief {
   email       String
   phone       String?
   companyName String?
+  projectName String  @default("My Project")
 
   // Block 2: Essence
   primaryObjective String
+  projectStage     String  @default("Idea")
   problemToSolve   String?
   keyFeatures      String? // JSON string of features
 
@@ -30,6 +32,7 @@ model Brief {
   preferredModels String?
   dataSources     String?
   integrations    String?
+  techStack       String?
 
   // Block 4: Design
   designStyle  String?
@@ -37,11 +40,16 @@ model Brief {
   competitors  String?
 
   // Block 5: Business
-  targetAudience String
-  budgetRange    String
-  timeline       String
-  successMetrics String?
-  comments       String?
+  targetAudience          String
+  targetLanguages         String?
+  userCount               String?
+  budgetRange             String
+  timeline                String
+  successMetrics          String?
+  monetizationModel       String?
+  securityCompliance      String?
+  maintenanceRequirements String?
+  comments                String?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

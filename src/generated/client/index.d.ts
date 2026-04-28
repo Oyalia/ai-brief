@@ -132,7 +132,7 @@ export class PrismaClient<
    * 
    * Read more in our [docs](https://www.prisma.io/docs/orm/prisma-client/queries/transactions).
    */
-  $transaction<P extends Prisma.PrismaPromise<any>[]>(arg: [...P], options?: { maxWait?: number, timeout?: number, isolationLevel?: Prisma.TransactionIsolationLevel }): $Utils.JsPromise<runtime.Types.Utils.UnwrapTuple<P>>
+  $transaction<P extends Prisma.PrismaPromise<any>[]>(arg: [...P], options?: { isolationLevel?: Prisma.TransactionIsolationLevel }): $Utils.JsPromise<runtime.Types.Utils.UnwrapTuple<P>>
 
   $transaction<R>(fn: (prisma: Omit<PrismaClient, runtime.ITXClientDenyList>) => $Utils.JsPromise<R>, options?: { maxWait?: number, timeout?: number, isolationLevel?: Prisma.TransactionIsolationLevel }): $Utils.JsPromise<R>
 
@@ -199,8 +199,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 7.8.0
-   * Query Engine version: 3c6e192761c0362d496ed980de936e2f3cebcd3a
+   * Prisma Client JS version: 7.7.0
+   * Query Engine version: 75cbdc1eb7150937890ad5465d861175c6624711
    */
   export type PrismaVersion = {
     client: string
@@ -882,20 +882,28 @@ export namespace Prisma {
     email: string | null
     phone: string | null
     companyName: string | null
+    projectName: string | null
     primaryObjective: string | null
+    projectStage: string | null
     problemToSolve: string | null
     keyFeatures: string | null
     aiCapabilities: string | null
     preferredModels: string | null
     dataSources: string | null
     integrations: string | null
+    techStack: string | null
     designStyle: string | null
     colorPalette: string | null
     competitors: string | null
     targetAudience: string | null
+    targetLanguages: string | null
+    userCount: string | null
     budgetRange: string | null
     timeline: string | null
     successMetrics: string | null
+    monetizationModel: string | null
+    securityCompliance: string | null
+    maintenanceRequirements: string | null
     comments: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -907,20 +915,28 @@ export namespace Prisma {
     email: string | null
     phone: string | null
     companyName: string | null
+    projectName: string | null
     primaryObjective: string | null
+    projectStage: string | null
     problemToSolve: string | null
     keyFeatures: string | null
     aiCapabilities: string | null
     preferredModels: string | null
     dataSources: string | null
     integrations: string | null
+    techStack: string | null
     designStyle: string | null
     colorPalette: string | null
     competitors: string | null
     targetAudience: string | null
+    targetLanguages: string | null
+    userCount: string | null
     budgetRange: string | null
     timeline: string | null
     successMetrics: string | null
+    monetizationModel: string | null
+    securityCompliance: string | null
+    maintenanceRequirements: string | null
     comments: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -932,20 +948,28 @@ export namespace Prisma {
     email: number
     phone: number
     companyName: number
+    projectName: number
     primaryObjective: number
+    projectStage: number
     problemToSolve: number
     keyFeatures: number
     aiCapabilities: number
     preferredModels: number
     dataSources: number
     integrations: number
+    techStack: number
     designStyle: number
     colorPalette: number
     competitors: number
     targetAudience: number
+    targetLanguages: number
+    userCount: number
     budgetRange: number
     timeline: number
     successMetrics: number
+    monetizationModel: number
+    securityCompliance: number
+    maintenanceRequirements: number
     comments: number
     createdAt: number
     updatedAt: number
@@ -959,20 +983,28 @@ export namespace Prisma {
     email?: true
     phone?: true
     companyName?: true
+    projectName?: true
     primaryObjective?: true
+    projectStage?: true
     problemToSolve?: true
     keyFeatures?: true
     aiCapabilities?: true
     preferredModels?: true
     dataSources?: true
     integrations?: true
+    techStack?: true
     designStyle?: true
     colorPalette?: true
     competitors?: true
     targetAudience?: true
+    targetLanguages?: true
+    userCount?: true
     budgetRange?: true
     timeline?: true
     successMetrics?: true
+    monetizationModel?: true
+    securityCompliance?: true
+    maintenanceRequirements?: true
     comments?: true
     createdAt?: true
     updatedAt?: true
@@ -984,20 +1016,28 @@ export namespace Prisma {
     email?: true
     phone?: true
     companyName?: true
+    projectName?: true
     primaryObjective?: true
+    projectStage?: true
     problemToSolve?: true
     keyFeatures?: true
     aiCapabilities?: true
     preferredModels?: true
     dataSources?: true
     integrations?: true
+    techStack?: true
     designStyle?: true
     colorPalette?: true
     competitors?: true
     targetAudience?: true
+    targetLanguages?: true
+    userCount?: true
     budgetRange?: true
     timeline?: true
     successMetrics?: true
+    monetizationModel?: true
+    securityCompliance?: true
+    maintenanceRequirements?: true
     comments?: true
     createdAt?: true
     updatedAt?: true
@@ -1009,20 +1049,28 @@ export namespace Prisma {
     email?: true
     phone?: true
     companyName?: true
+    projectName?: true
     primaryObjective?: true
+    projectStage?: true
     problemToSolve?: true
     keyFeatures?: true
     aiCapabilities?: true
     preferredModels?: true
     dataSources?: true
     integrations?: true
+    techStack?: true
     designStyle?: true
     colorPalette?: true
     competitors?: true
     targetAudience?: true
+    targetLanguages?: true
+    userCount?: true
     budgetRange?: true
     timeline?: true
     successMetrics?: true
+    monetizationModel?: true
+    securityCompliance?: true
+    maintenanceRequirements?: true
     comments?: true
     createdAt?: true
     updatedAt?: true
@@ -1107,20 +1155,28 @@ export namespace Prisma {
     email: string
     phone: string | null
     companyName: string | null
+    projectName: string
     primaryObjective: string
+    projectStage: string
     problemToSolve: string | null
     keyFeatures: string | null
     aiCapabilities: string
     preferredModels: string | null
     dataSources: string | null
     integrations: string | null
+    techStack: string | null
     designStyle: string | null
     colorPalette: string | null
     competitors: string | null
     targetAudience: string
+    targetLanguages: string | null
+    userCount: string | null
     budgetRange: string
     timeline: string
     successMetrics: string | null
+    monetizationModel: string | null
+    securityCompliance: string | null
+    maintenanceRequirements: string | null
     comments: string | null
     createdAt: Date
     updatedAt: Date
@@ -1149,20 +1205,28 @@ export namespace Prisma {
     email?: boolean
     phone?: boolean
     companyName?: boolean
+    projectName?: boolean
     primaryObjective?: boolean
+    projectStage?: boolean
     problemToSolve?: boolean
     keyFeatures?: boolean
     aiCapabilities?: boolean
     preferredModels?: boolean
     dataSources?: boolean
     integrations?: boolean
+    techStack?: boolean
     designStyle?: boolean
     colorPalette?: boolean
     competitors?: boolean
     targetAudience?: boolean
+    targetLanguages?: boolean
+    userCount?: boolean
     budgetRange?: boolean
     timeline?: boolean
     successMetrics?: boolean
+    monetizationModel?: boolean
+    securityCompliance?: boolean
+    maintenanceRequirements?: boolean
     comments?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -1174,20 +1238,28 @@ export namespace Prisma {
     email?: boolean
     phone?: boolean
     companyName?: boolean
+    projectName?: boolean
     primaryObjective?: boolean
+    projectStage?: boolean
     problemToSolve?: boolean
     keyFeatures?: boolean
     aiCapabilities?: boolean
     preferredModels?: boolean
     dataSources?: boolean
     integrations?: boolean
+    techStack?: boolean
     designStyle?: boolean
     colorPalette?: boolean
     competitors?: boolean
     targetAudience?: boolean
+    targetLanguages?: boolean
+    userCount?: boolean
     budgetRange?: boolean
     timeline?: boolean
     successMetrics?: boolean
+    monetizationModel?: boolean
+    securityCompliance?: boolean
+    maintenanceRequirements?: boolean
     comments?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -1199,20 +1271,28 @@ export namespace Prisma {
     email?: boolean
     phone?: boolean
     companyName?: boolean
+    projectName?: boolean
     primaryObjective?: boolean
+    projectStage?: boolean
     problemToSolve?: boolean
     keyFeatures?: boolean
     aiCapabilities?: boolean
     preferredModels?: boolean
     dataSources?: boolean
     integrations?: boolean
+    techStack?: boolean
     designStyle?: boolean
     colorPalette?: boolean
     competitors?: boolean
     targetAudience?: boolean
+    targetLanguages?: boolean
+    userCount?: boolean
     budgetRange?: boolean
     timeline?: boolean
     successMetrics?: boolean
+    monetizationModel?: boolean
+    securityCompliance?: boolean
+    maintenanceRequirements?: boolean
     comments?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -1224,26 +1304,34 @@ export namespace Prisma {
     email?: boolean
     phone?: boolean
     companyName?: boolean
+    projectName?: boolean
     primaryObjective?: boolean
+    projectStage?: boolean
     problemToSolve?: boolean
     keyFeatures?: boolean
     aiCapabilities?: boolean
     preferredModels?: boolean
     dataSources?: boolean
     integrations?: boolean
+    techStack?: boolean
     designStyle?: boolean
     colorPalette?: boolean
     competitors?: boolean
     targetAudience?: boolean
+    targetLanguages?: boolean
+    userCount?: boolean
     budgetRange?: boolean
     timeline?: boolean
     successMetrics?: boolean
+    monetizationModel?: boolean
+    securityCompliance?: boolean
+    maintenanceRequirements?: boolean
     comments?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type BriefOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "contactName" | "email" | "phone" | "companyName" | "primaryObjective" | "problemToSolve" | "keyFeatures" | "aiCapabilities" | "preferredModels" | "dataSources" | "integrations" | "designStyle" | "colorPalette" | "competitors" | "targetAudience" | "budgetRange" | "timeline" | "successMetrics" | "comments" | "createdAt" | "updatedAt", ExtArgs["result"]["brief"]>
+  export type BriefOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "contactName" | "email" | "phone" | "companyName" | "projectName" | "primaryObjective" | "projectStage" | "problemToSolve" | "keyFeatures" | "aiCapabilities" | "preferredModels" | "dataSources" | "integrations" | "techStack" | "designStyle" | "colorPalette" | "competitors" | "targetAudience" | "targetLanguages" | "userCount" | "budgetRange" | "timeline" | "successMetrics" | "monetizationModel" | "securityCompliance" | "maintenanceRequirements" | "comments" | "createdAt" | "updatedAt", ExtArgs["result"]["brief"]>
 
   export type $BriefPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Brief"
@@ -1254,20 +1342,28 @@ export namespace Prisma {
       email: string
       phone: string | null
       companyName: string | null
+      projectName: string
       primaryObjective: string
+      projectStage: string
       problemToSolve: string | null
       keyFeatures: string | null
       aiCapabilities: string
       preferredModels: string | null
       dataSources: string | null
       integrations: string | null
+      techStack: string | null
       designStyle: string | null
       colorPalette: string | null
       competitors: string | null
       targetAudience: string
+      targetLanguages: string | null
+      userCount: string | null
       budgetRange: string
       timeline: string
       successMetrics: string | null
+      monetizationModel: string | null
+      securityCompliance: string | null
+      maintenanceRequirements: string | null
       comments: string | null
       createdAt: Date
       updatedAt: Date
@@ -1699,20 +1795,28 @@ export namespace Prisma {
     readonly email: FieldRef<"Brief", 'String'>
     readonly phone: FieldRef<"Brief", 'String'>
     readonly companyName: FieldRef<"Brief", 'String'>
+    readonly projectName: FieldRef<"Brief", 'String'>
     readonly primaryObjective: FieldRef<"Brief", 'String'>
+    readonly projectStage: FieldRef<"Brief", 'String'>
     readonly problemToSolve: FieldRef<"Brief", 'String'>
     readonly keyFeatures: FieldRef<"Brief", 'String'>
     readonly aiCapabilities: FieldRef<"Brief", 'String'>
     readonly preferredModels: FieldRef<"Brief", 'String'>
     readonly dataSources: FieldRef<"Brief", 'String'>
     readonly integrations: FieldRef<"Brief", 'String'>
+    readonly techStack: FieldRef<"Brief", 'String'>
     readonly designStyle: FieldRef<"Brief", 'String'>
     readonly colorPalette: FieldRef<"Brief", 'String'>
     readonly competitors: FieldRef<"Brief", 'String'>
     readonly targetAudience: FieldRef<"Brief", 'String'>
+    readonly targetLanguages: FieldRef<"Brief", 'String'>
+    readonly userCount: FieldRef<"Brief", 'String'>
     readonly budgetRange: FieldRef<"Brief", 'String'>
     readonly timeline: FieldRef<"Brief", 'String'>
     readonly successMetrics: FieldRef<"Brief", 'String'>
+    readonly monetizationModel: FieldRef<"Brief", 'String'>
+    readonly securityCompliance: FieldRef<"Brief", 'String'>
+    readonly maintenanceRequirements: FieldRef<"Brief", 'String'>
     readonly comments: FieldRef<"Brief", 'String'>
     readonly createdAt: FieldRef<"Brief", 'DateTime'>
     readonly updatedAt: FieldRef<"Brief", 'DateTime'>
@@ -2107,20 +2211,28 @@ export namespace Prisma {
     email: 'email',
     phone: 'phone',
     companyName: 'companyName',
+    projectName: 'projectName',
     primaryObjective: 'primaryObjective',
+    projectStage: 'projectStage',
     problemToSolve: 'problemToSolve',
     keyFeatures: 'keyFeatures',
     aiCapabilities: 'aiCapabilities',
     preferredModels: 'preferredModels',
     dataSources: 'dataSources',
     integrations: 'integrations',
+    techStack: 'techStack',
     designStyle: 'designStyle',
     colorPalette: 'colorPalette',
     competitors: 'competitors',
     targetAudience: 'targetAudience',
+    targetLanguages: 'targetLanguages',
+    userCount: 'userCount',
     budgetRange: 'budgetRange',
     timeline: 'timeline',
     successMetrics: 'successMetrics',
+    monetizationModel: 'monetizationModel',
+    securityCompliance: 'securityCompliance',
+    maintenanceRequirements: 'maintenanceRequirements',
     comments: 'comments',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
@@ -2212,20 +2324,28 @@ export namespace Prisma {
     email?: StringFilter<"Brief"> | string
     phone?: StringNullableFilter<"Brief"> | string | null
     companyName?: StringNullableFilter<"Brief"> | string | null
+    projectName?: StringFilter<"Brief"> | string
     primaryObjective?: StringFilter<"Brief"> | string
+    projectStage?: StringFilter<"Brief"> | string
     problemToSolve?: StringNullableFilter<"Brief"> | string | null
     keyFeatures?: StringNullableFilter<"Brief"> | string | null
     aiCapabilities?: StringFilter<"Brief"> | string
     preferredModels?: StringNullableFilter<"Brief"> | string | null
     dataSources?: StringNullableFilter<"Brief"> | string | null
     integrations?: StringNullableFilter<"Brief"> | string | null
+    techStack?: StringNullableFilter<"Brief"> | string | null
     designStyle?: StringNullableFilter<"Brief"> | string | null
     colorPalette?: StringNullableFilter<"Brief"> | string | null
     competitors?: StringNullableFilter<"Brief"> | string | null
     targetAudience?: StringFilter<"Brief"> | string
+    targetLanguages?: StringNullableFilter<"Brief"> | string | null
+    userCount?: StringNullableFilter<"Brief"> | string | null
     budgetRange?: StringFilter<"Brief"> | string
     timeline?: StringFilter<"Brief"> | string
     successMetrics?: StringNullableFilter<"Brief"> | string | null
+    monetizationModel?: StringNullableFilter<"Brief"> | string | null
+    securityCompliance?: StringNullableFilter<"Brief"> | string | null
+    maintenanceRequirements?: StringNullableFilter<"Brief"> | string | null
     comments?: StringNullableFilter<"Brief"> | string | null
     createdAt?: DateTimeFilter<"Brief"> | Date | string
     updatedAt?: DateTimeFilter<"Brief"> | Date | string
@@ -2237,20 +2357,28 @@ export namespace Prisma {
     email?: SortOrder
     phone?: SortOrderInput | SortOrder
     companyName?: SortOrderInput | SortOrder
+    projectName?: SortOrder
     primaryObjective?: SortOrder
+    projectStage?: SortOrder
     problemToSolve?: SortOrderInput | SortOrder
     keyFeatures?: SortOrderInput | SortOrder
     aiCapabilities?: SortOrder
     preferredModels?: SortOrderInput | SortOrder
     dataSources?: SortOrderInput | SortOrder
     integrations?: SortOrderInput | SortOrder
+    techStack?: SortOrderInput | SortOrder
     designStyle?: SortOrderInput | SortOrder
     colorPalette?: SortOrderInput | SortOrder
     competitors?: SortOrderInput | SortOrder
     targetAudience?: SortOrder
+    targetLanguages?: SortOrderInput | SortOrder
+    userCount?: SortOrderInput | SortOrder
     budgetRange?: SortOrder
     timeline?: SortOrder
     successMetrics?: SortOrderInput | SortOrder
+    monetizationModel?: SortOrderInput | SortOrder
+    securityCompliance?: SortOrderInput | SortOrder
+    maintenanceRequirements?: SortOrderInput | SortOrder
     comments?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -2265,20 +2393,28 @@ export namespace Prisma {
     email?: StringFilter<"Brief"> | string
     phone?: StringNullableFilter<"Brief"> | string | null
     companyName?: StringNullableFilter<"Brief"> | string | null
+    projectName?: StringFilter<"Brief"> | string
     primaryObjective?: StringFilter<"Brief"> | string
+    projectStage?: StringFilter<"Brief"> | string
     problemToSolve?: StringNullableFilter<"Brief"> | string | null
     keyFeatures?: StringNullableFilter<"Brief"> | string | null
     aiCapabilities?: StringFilter<"Brief"> | string
     preferredModels?: StringNullableFilter<"Brief"> | string | null
     dataSources?: StringNullableFilter<"Brief"> | string | null
     integrations?: StringNullableFilter<"Brief"> | string | null
+    techStack?: StringNullableFilter<"Brief"> | string | null
     designStyle?: StringNullableFilter<"Brief"> | string | null
     colorPalette?: StringNullableFilter<"Brief"> | string | null
     competitors?: StringNullableFilter<"Brief"> | string | null
     targetAudience?: StringFilter<"Brief"> | string
+    targetLanguages?: StringNullableFilter<"Brief"> | string | null
+    userCount?: StringNullableFilter<"Brief"> | string | null
     budgetRange?: StringFilter<"Brief"> | string
     timeline?: StringFilter<"Brief"> | string
     successMetrics?: StringNullableFilter<"Brief"> | string | null
+    monetizationModel?: StringNullableFilter<"Brief"> | string | null
+    securityCompliance?: StringNullableFilter<"Brief"> | string | null
+    maintenanceRequirements?: StringNullableFilter<"Brief"> | string | null
     comments?: StringNullableFilter<"Brief"> | string | null
     createdAt?: DateTimeFilter<"Brief"> | Date | string
     updatedAt?: DateTimeFilter<"Brief"> | Date | string
@@ -2290,20 +2426,28 @@ export namespace Prisma {
     email?: SortOrder
     phone?: SortOrderInput | SortOrder
     companyName?: SortOrderInput | SortOrder
+    projectName?: SortOrder
     primaryObjective?: SortOrder
+    projectStage?: SortOrder
     problemToSolve?: SortOrderInput | SortOrder
     keyFeatures?: SortOrderInput | SortOrder
     aiCapabilities?: SortOrder
     preferredModels?: SortOrderInput | SortOrder
     dataSources?: SortOrderInput | SortOrder
     integrations?: SortOrderInput | SortOrder
+    techStack?: SortOrderInput | SortOrder
     designStyle?: SortOrderInput | SortOrder
     colorPalette?: SortOrderInput | SortOrder
     competitors?: SortOrderInput | SortOrder
     targetAudience?: SortOrder
+    targetLanguages?: SortOrderInput | SortOrder
+    userCount?: SortOrderInput | SortOrder
     budgetRange?: SortOrder
     timeline?: SortOrder
     successMetrics?: SortOrderInput | SortOrder
+    monetizationModel?: SortOrderInput | SortOrder
+    securityCompliance?: SortOrderInput | SortOrder
+    maintenanceRequirements?: SortOrderInput | SortOrder
     comments?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -2321,20 +2465,28 @@ export namespace Prisma {
     email?: StringWithAggregatesFilter<"Brief"> | string
     phone?: StringNullableWithAggregatesFilter<"Brief"> | string | null
     companyName?: StringNullableWithAggregatesFilter<"Brief"> | string | null
+    projectName?: StringWithAggregatesFilter<"Brief"> | string
     primaryObjective?: StringWithAggregatesFilter<"Brief"> | string
+    projectStage?: StringWithAggregatesFilter<"Brief"> | string
     problemToSolve?: StringNullableWithAggregatesFilter<"Brief"> | string | null
     keyFeatures?: StringNullableWithAggregatesFilter<"Brief"> | string | null
     aiCapabilities?: StringWithAggregatesFilter<"Brief"> | string
     preferredModels?: StringNullableWithAggregatesFilter<"Brief"> | string | null
     dataSources?: StringNullableWithAggregatesFilter<"Brief"> | string | null
     integrations?: StringNullableWithAggregatesFilter<"Brief"> | string | null
+    techStack?: StringNullableWithAggregatesFilter<"Brief"> | string | null
     designStyle?: StringNullableWithAggregatesFilter<"Brief"> | string | null
     colorPalette?: StringNullableWithAggregatesFilter<"Brief"> | string | null
     competitors?: StringNullableWithAggregatesFilter<"Brief"> | string | null
     targetAudience?: StringWithAggregatesFilter<"Brief"> | string
+    targetLanguages?: StringNullableWithAggregatesFilter<"Brief"> | string | null
+    userCount?: StringNullableWithAggregatesFilter<"Brief"> | string | null
     budgetRange?: StringWithAggregatesFilter<"Brief"> | string
     timeline?: StringWithAggregatesFilter<"Brief"> | string
     successMetrics?: StringNullableWithAggregatesFilter<"Brief"> | string | null
+    monetizationModel?: StringNullableWithAggregatesFilter<"Brief"> | string | null
+    securityCompliance?: StringNullableWithAggregatesFilter<"Brief"> | string | null
+    maintenanceRequirements?: StringNullableWithAggregatesFilter<"Brief"> | string | null
     comments?: StringNullableWithAggregatesFilter<"Brief"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Brief"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Brief"> | Date | string
@@ -2346,20 +2498,28 @@ export namespace Prisma {
     email: string
     phone?: string | null
     companyName?: string | null
+    projectName?: string
     primaryObjective: string
+    projectStage?: string
     problemToSolve?: string | null
     keyFeatures?: string | null
     aiCapabilities: string
     preferredModels?: string | null
     dataSources?: string | null
     integrations?: string | null
+    techStack?: string | null
     designStyle?: string | null
     colorPalette?: string | null
     competitors?: string | null
     targetAudience: string
+    targetLanguages?: string | null
+    userCount?: string | null
     budgetRange: string
     timeline: string
     successMetrics?: string | null
+    monetizationModel?: string | null
+    securityCompliance?: string | null
+    maintenanceRequirements?: string | null
     comments?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -2371,20 +2531,28 @@ export namespace Prisma {
     email: string
     phone?: string | null
     companyName?: string | null
+    projectName?: string
     primaryObjective: string
+    projectStage?: string
     problemToSolve?: string | null
     keyFeatures?: string | null
     aiCapabilities: string
     preferredModels?: string | null
     dataSources?: string | null
     integrations?: string | null
+    techStack?: string | null
     designStyle?: string | null
     colorPalette?: string | null
     competitors?: string | null
     targetAudience: string
+    targetLanguages?: string | null
+    userCount?: string | null
     budgetRange: string
     timeline: string
     successMetrics?: string | null
+    monetizationModel?: string | null
+    securityCompliance?: string | null
+    maintenanceRequirements?: string | null
     comments?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -2396,20 +2564,28 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    projectName?: StringFieldUpdateOperationsInput | string
     primaryObjective?: StringFieldUpdateOperationsInput | string
+    projectStage?: StringFieldUpdateOperationsInput | string
     problemToSolve?: NullableStringFieldUpdateOperationsInput | string | null
     keyFeatures?: NullableStringFieldUpdateOperationsInput | string | null
     aiCapabilities?: StringFieldUpdateOperationsInput | string
     preferredModels?: NullableStringFieldUpdateOperationsInput | string | null
     dataSources?: NullableStringFieldUpdateOperationsInput | string | null
     integrations?: NullableStringFieldUpdateOperationsInput | string | null
+    techStack?: NullableStringFieldUpdateOperationsInput | string | null
     designStyle?: NullableStringFieldUpdateOperationsInput | string | null
     colorPalette?: NullableStringFieldUpdateOperationsInput | string | null
     competitors?: NullableStringFieldUpdateOperationsInput | string | null
     targetAudience?: StringFieldUpdateOperationsInput | string
+    targetLanguages?: NullableStringFieldUpdateOperationsInput | string | null
+    userCount?: NullableStringFieldUpdateOperationsInput | string | null
     budgetRange?: StringFieldUpdateOperationsInput | string
     timeline?: StringFieldUpdateOperationsInput | string
     successMetrics?: NullableStringFieldUpdateOperationsInput | string | null
+    monetizationModel?: NullableStringFieldUpdateOperationsInput | string | null
+    securityCompliance?: NullableStringFieldUpdateOperationsInput | string | null
+    maintenanceRequirements?: NullableStringFieldUpdateOperationsInput | string | null
     comments?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -2421,20 +2597,28 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    projectName?: StringFieldUpdateOperationsInput | string
     primaryObjective?: StringFieldUpdateOperationsInput | string
+    projectStage?: StringFieldUpdateOperationsInput | string
     problemToSolve?: NullableStringFieldUpdateOperationsInput | string | null
     keyFeatures?: NullableStringFieldUpdateOperationsInput | string | null
     aiCapabilities?: StringFieldUpdateOperationsInput | string
     preferredModels?: NullableStringFieldUpdateOperationsInput | string | null
     dataSources?: NullableStringFieldUpdateOperationsInput | string | null
     integrations?: NullableStringFieldUpdateOperationsInput | string | null
+    techStack?: NullableStringFieldUpdateOperationsInput | string | null
     designStyle?: NullableStringFieldUpdateOperationsInput | string | null
     colorPalette?: NullableStringFieldUpdateOperationsInput | string | null
     competitors?: NullableStringFieldUpdateOperationsInput | string | null
     targetAudience?: StringFieldUpdateOperationsInput | string
+    targetLanguages?: NullableStringFieldUpdateOperationsInput | string | null
+    userCount?: NullableStringFieldUpdateOperationsInput | string | null
     budgetRange?: StringFieldUpdateOperationsInput | string
     timeline?: StringFieldUpdateOperationsInput | string
     successMetrics?: NullableStringFieldUpdateOperationsInput | string | null
+    monetizationModel?: NullableStringFieldUpdateOperationsInput | string | null
+    securityCompliance?: NullableStringFieldUpdateOperationsInput | string | null
+    maintenanceRequirements?: NullableStringFieldUpdateOperationsInput | string | null
     comments?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -2446,20 +2630,28 @@ export namespace Prisma {
     email: string
     phone?: string | null
     companyName?: string | null
+    projectName?: string
     primaryObjective: string
+    projectStage?: string
     problemToSolve?: string | null
     keyFeatures?: string | null
     aiCapabilities: string
     preferredModels?: string | null
     dataSources?: string | null
     integrations?: string | null
+    techStack?: string | null
     designStyle?: string | null
     colorPalette?: string | null
     competitors?: string | null
     targetAudience: string
+    targetLanguages?: string | null
+    userCount?: string | null
     budgetRange: string
     timeline: string
     successMetrics?: string | null
+    monetizationModel?: string | null
+    securityCompliance?: string | null
+    maintenanceRequirements?: string | null
     comments?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -2471,20 +2663,28 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    projectName?: StringFieldUpdateOperationsInput | string
     primaryObjective?: StringFieldUpdateOperationsInput | string
+    projectStage?: StringFieldUpdateOperationsInput | string
     problemToSolve?: NullableStringFieldUpdateOperationsInput | string | null
     keyFeatures?: NullableStringFieldUpdateOperationsInput | string | null
     aiCapabilities?: StringFieldUpdateOperationsInput | string
     preferredModels?: NullableStringFieldUpdateOperationsInput | string | null
     dataSources?: NullableStringFieldUpdateOperationsInput | string | null
     integrations?: NullableStringFieldUpdateOperationsInput | string | null
+    techStack?: NullableStringFieldUpdateOperationsInput | string | null
     designStyle?: NullableStringFieldUpdateOperationsInput | string | null
     colorPalette?: NullableStringFieldUpdateOperationsInput | string | null
     competitors?: NullableStringFieldUpdateOperationsInput | string | null
     targetAudience?: StringFieldUpdateOperationsInput | string
+    targetLanguages?: NullableStringFieldUpdateOperationsInput | string | null
+    userCount?: NullableStringFieldUpdateOperationsInput | string | null
     budgetRange?: StringFieldUpdateOperationsInput | string
     timeline?: StringFieldUpdateOperationsInput | string
     successMetrics?: NullableStringFieldUpdateOperationsInput | string | null
+    monetizationModel?: NullableStringFieldUpdateOperationsInput | string | null
+    securityCompliance?: NullableStringFieldUpdateOperationsInput | string | null
+    maintenanceRequirements?: NullableStringFieldUpdateOperationsInput | string | null
     comments?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -2496,20 +2696,28 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    projectName?: StringFieldUpdateOperationsInput | string
     primaryObjective?: StringFieldUpdateOperationsInput | string
+    projectStage?: StringFieldUpdateOperationsInput | string
     problemToSolve?: NullableStringFieldUpdateOperationsInput | string | null
     keyFeatures?: NullableStringFieldUpdateOperationsInput | string | null
     aiCapabilities?: StringFieldUpdateOperationsInput | string
     preferredModels?: NullableStringFieldUpdateOperationsInput | string | null
     dataSources?: NullableStringFieldUpdateOperationsInput | string | null
     integrations?: NullableStringFieldUpdateOperationsInput | string | null
+    techStack?: NullableStringFieldUpdateOperationsInput | string | null
     designStyle?: NullableStringFieldUpdateOperationsInput | string | null
     colorPalette?: NullableStringFieldUpdateOperationsInput | string | null
     competitors?: NullableStringFieldUpdateOperationsInput | string | null
     targetAudience?: StringFieldUpdateOperationsInput | string
+    targetLanguages?: NullableStringFieldUpdateOperationsInput | string | null
+    userCount?: NullableStringFieldUpdateOperationsInput | string | null
     budgetRange?: StringFieldUpdateOperationsInput | string
     timeline?: StringFieldUpdateOperationsInput | string
     successMetrics?: NullableStringFieldUpdateOperationsInput | string | null
+    monetizationModel?: NullableStringFieldUpdateOperationsInput | string | null
+    securityCompliance?: NullableStringFieldUpdateOperationsInput | string | null
+    maintenanceRequirements?: NullableStringFieldUpdateOperationsInput | string | null
     comments?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -2567,20 +2775,28 @@ export namespace Prisma {
     email?: SortOrder
     phone?: SortOrder
     companyName?: SortOrder
+    projectName?: SortOrder
     primaryObjective?: SortOrder
+    projectStage?: SortOrder
     problemToSolve?: SortOrder
     keyFeatures?: SortOrder
     aiCapabilities?: SortOrder
     preferredModels?: SortOrder
     dataSources?: SortOrder
     integrations?: SortOrder
+    techStack?: SortOrder
     designStyle?: SortOrder
     colorPalette?: SortOrder
     competitors?: SortOrder
     targetAudience?: SortOrder
+    targetLanguages?: SortOrder
+    userCount?: SortOrder
     budgetRange?: SortOrder
     timeline?: SortOrder
     successMetrics?: SortOrder
+    monetizationModel?: SortOrder
+    securityCompliance?: SortOrder
+    maintenanceRequirements?: SortOrder
     comments?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -2592,20 +2808,28 @@ export namespace Prisma {
     email?: SortOrder
     phone?: SortOrder
     companyName?: SortOrder
+    projectName?: SortOrder
     primaryObjective?: SortOrder
+    projectStage?: SortOrder
     problemToSolve?: SortOrder
     keyFeatures?: SortOrder
     aiCapabilities?: SortOrder
     preferredModels?: SortOrder
     dataSources?: SortOrder
     integrations?: SortOrder
+    techStack?: SortOrder
     designStyle?: SortOrder
     colorPalette?: SortOrder
     competitors?: SortOrder
     targetAudience?: SortOrder
+    targetLanguages?: SortOrder
+    userCount?: SortOrder
     budgetRange?: SortOrder
     timeline?: SortOrder
     successMetrics?: SortOrder
+    monetizationModel?: SortOrder
+    securityCompliance?: SortOrder
+    maintenanceRequirements?: SortOrder
     comments?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -2617,20 +2841,28 @@ export namespace Prisma {
     email?: SortOrder
     phone?: SortOrder
     companyName?: SortOrder
+    projectName?: SortOrder
     primaryObjective?: SortOrder
+    projectStage?: SortOrder
     problemToSolve?: SortOrder
     keyFeatures?: SortOrder
     aiCapabilities?: SortOrder
     preferredModels?: SortOrder
     dataSources?: SortOrder
     integrations?: SortOrder
+    techStack?: SortOrder
     designStyle?: SortOrder
     colorPalette?: SortOrder
     competitors?: SortOrder
     targetAudience?: SortOrder
+    targetLanguages?: SortOrder
+    userCount?: SortOrder
     budgetRange?: SortOrder
     timeline?: SortOrder
     successMetrics?: SortOrder
+    monetizationModel?: SortOrder
+    securityCompliance?: SortOrder
+    maintenanceRequirements?: SortOrder
     comments?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder

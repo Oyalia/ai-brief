@@ -11,8 +11,10 @@ interface Brief {
   email: string;
   phone: string | null;
   companyName: string | null;
+  projectName: string;
   // Block 2
   primaryObjective: string;
+  projectStage: string;
   problemToSolve: string | null;
   keyFeatures: string | null;
   // Block 3
@@ -20,15 +22,21 @@ interface Brief {
   preferredModels: string | null;
   dataSources: string | null;
   integrations: string | null;
+  techStack: string | null;
   // Block 4
   designStyle: string | null;
   colorPalette: string | null;
   competitors: string | null;
   // Block 5
   targetAudience: string;
+  targetLanguages: string | null;
+  userCount: string | null;
   budgetRange: string;
   timeline: string;
   successMetrics: string | null;
+  monetizationModel: string | null;
+  securityCompliance: string | null;
+  maintenanceRequirements: string | null;
   comments: string | null;
 }
 
@@ -114,6 +122,10 @@ export default function EditBrief({ params }: { params: Promise<{ id: string }> 
                 <label className="text-xs text-gray-500">Компанія</label>
                 <input value={formData.companyName || ""} onChange={(e) => setFormData({ ...formData, companyName: e.target.value })} />
               </div>
+              <div className="space-y-1">
+                <label className="text-xs text-gray-500">Назва проекту</label>
+                <input value={formData.projectName} onChange={(e) => setFormData({ ...formData, projectName: e.target.value })} />
+              </div>
             </div>
           </div>
 
@@ -124,6 +136,10 @@ export default function EditBrief({ params }: { params: Promise<{ id: string }> 
               <div className="space-y-1">
                 <label className="text-xs text-gray-500">Головна мета</label>
                 <input value={formData.primaryObjective} onChange={(e) => setFormData({ ...formData, primaryObjective: e.target.value })} />
+              </div>
+              <div className="space-y-1">
+                <label className="text-xs text-gray-500">Стадія проекту</label>
+                <input value={formData.projectStage} onChange={(e) => setFormData({ ...formData, projectStage: e.target.value })} />
               </div>
               <div className="space-y-1">
                 <label className="text-xs text-gray-500">Проблема</label>
@@ -156,6 +172,14 @@ export default function EditBrief({ params }: { params: Promise<{ id: string }> 
             <div className="space-y-1">
               <label className="text-xs text-gray-500">Інтеграції</label>
               <input value={formData.integrations || ""} onChange={(e) => setFormData({ ...formData, integrations: e.target.value })} />
+            </div>
+            <div className="space-y-1">
+              <label className="text-xs text-gray-500">Стек технологій</label>
+              <input value={formData.techStack || ""} onChange={(e) => setFormData({ ...formData, techStack: e.target.value })} />
+            </div>
+            <div className="space-y-1">
+              <label className="text-xs text-gray-500">Безпека</label>
+              <input value={formData.securityCompliance || ""} onChange={(e) => setFormData({ ...formData, securityCompliance: e.target.value })} />
             </div>
           </div>
 
@@ -197,6 +221,22 @@ export default function EditBrief({ params }: { params: Promise<{ id: string }> 
               <div className="space-y-1">
                 <label className="text-xs text-gray-500">Терміни</label>
                 <input value={formData.timeline} onChange={(e) => setFormData({ ...formData, timeline: e.target.value })} />
+              </div>
+              <div className="space-y-1">
+                <label className="text-xs text-gray-500">Мови</label>
+                <input value={formData.targetLanguages || ""} onChange={(e) => setFormData({ ...formData, targetLanguages: e.target.value })} />
+              </div>
+              <div className="space-y-1">
+                <label className="text-xs text-gray-500">Юзери</label>
+                <input value={formData.userCount || ""} onChange={(e) => setFormData({ ...formData, userCount: e.target.value })} />
+              </div>
+              <div className="space-y-1">
+                <label className="text-xs text-gray-500">Монетизація</label>
+                <input value={formData.monetizationModel || ""} onChange={(e) => setFormData({ ...formData, monetizationModel: e.target.value })} />
+              </div>
+              <div className="space-y-1 md:col-span-2">
+                <label className="text-xs text-gray-500">Підтримка</label>
+                <input value={formData.maintenanceRequirements || ""} onChange={(e) => setFormData({ ...formData, maintenanceRequirements: e.target.value })} />
               </div>
             </div>
           </div>

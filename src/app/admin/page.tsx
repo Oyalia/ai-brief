@@ -6,6 +6,7 @@ import Link from "next/link";
 interface Brief {
   id: string;
   contactName: string;
+  projectName: string;
   companyName: string | null;
   email: string;
   primaryObjective: string;
@@ -43,9 +44,9 @@ export default function AdminDashboard() {
               <thead>
                 <tr className="border-b border-gray-800">
                   <th className="p-4 font-medium text-gray-400">Дата</th>
+                  <th className="p-4 font-medium text-gray-400">Проект</th>
                   <th className="p-4 font-medium text-gray-400">Клієнт</th>
                   <th className="p-4 font-medium text-gray-400">Компанія</th>
-                  <th className="p-4 font-medium text-gray-400">Мета</th>
                   <th className="p-4 font-medium text-gray-400">Дії</th>
                 </tr>
               </thead>
@@ -55,9 +56,9 @@ export default function AdminDashboard() {
                     <td className="p-4 text-sm text-gray-500">
                       {new Date(brief.createdAt).toLocaleDateString()}
                     </td>
+                    <td className="p-4 font-bold text-white">{brief.projectName}</td>
                     <td className="p-4 font-medium">{brief.contactName}</td>
                     <td className="p-4 text-gray-300">{brief.companyName || "-"}</td>
-                    <td className="p-4 text-gray-300">{brief.primaryObjective}</td>
                     <td className="p-4">
                       <Link
                         href={`/admin/${brief.id}`}

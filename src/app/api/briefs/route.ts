@@ -25,9 +25,11 @@ export async function POST(request: Request) {
         email: body.email,
         phone: body.phone,
         companyName: body.companyName,
+        projectName: body.projectName,
         
         // Block 2
         primaryObjective: body.primaryObjective,
+        projectStage: body.projectStage,
         problemToSolve: body.problemToSolve,
         keyFeatures: body.keyFeatures,
         
@@ -36,6 +38,7 @@ export async function POST(request: Request) {
         preferredModels: body.preferredModels,
         dataSources: body.dataSources,
         integrations: body.integrations,
+        techStack: body.techStack,
         
         // Block 4
         designStyle: body.designStyle,
@@ -44,9 +47,14 @@ export async function POST(request: Request) {
         
         // Block 5
         targetAudience: body.targetAudience,
+        targetLanguages: body.targetLanguages,
+        userCount: body.userCount,
         budgetRange: body.budgetRange,
         timeline: body.timeline,
         successMetrics: body.successMetrics,
+        monetizationModel: body.monetizationModel,
+        securityCompliance: body.securityCompliance,
+        maintenanceRequirements: body.maintenanceRequirements,
         comments: body.comments,
       },
     });
